@@ -1,0 +1,36 @@
+{
+  "name": "dom-to-image-modern",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "author": "gy",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly -p tsconfig.build.json",
+    "build:types": "tsc --emitDeclarationOnly -p tsconfig.build.json",
+    "dev": "concurrently \"vite build --watch --mode development\" \"tsc --watch --emitDeclarationOnly -p tsconfig.build.json\"",
+    "dev:types": "tsc --watch --emitDeclarationOnly -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^5.5.4",
+    "vite": "^5.1.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
