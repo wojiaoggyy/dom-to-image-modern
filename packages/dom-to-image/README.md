@@ -1,6 +1,6 @@
 # dom-to-image-modern
 
-## dom-to-image现代化改造，API保持一致未做任何修改
+## 对dom-to-image进行现代化改造，API保持一致未做任何修改 [github](https://github.com/wojiaoggyy/dom-to-image-modern)
 
 ### 完善typescript类型定义，ts项目可直接使用
 
@@ -106,7 +106,7 @@ export interface DomToImage {
 }
 ```
 
-### 顺便修复已知bug
+### 修复已知bug
 
 - 修复svg元素的xmlns:xlink属性为空的问题
 - 添加了对百分号的处理，原始dom中可能出现百分号加数字的组合（%28 %26等），会被转义成特殊符号导致报错
@@ -118,17 +118,15 @@ npm install dom-to-image-modern
 ```
 
 ```typescript
-import domToImage from "dom-to-image-modern";
-domToImage.toBlob(document.body).then((blob) => {
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "export.png";
-  a.click();
-  URL.revokeObjectURL(url);
-});
+import {
+  toSvg,
+  toPng,
+  toJpeg,
+  toBlob,
+  toPixelData,
+  impl,
+} from "dom-to-image-modern";
 
-import { toBlob } from "dom-to-image-modern";
 toBlob(document.body).then((blob) => {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
