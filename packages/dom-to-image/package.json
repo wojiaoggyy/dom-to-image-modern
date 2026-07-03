@@ -1,10 +1,26 @@
 {
   "name": "dom-to-image-modern",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "description": "对dom-to-image进行现代化改造 The modernized version of dom-to-image",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
   "author": "gy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wojiaoggyy/dom-to-image-modern"
+  },
+  "homepage": "https://github.com/wojiaoggyy/dom-to-image-modern",
+  "keywords": [
+    "dom-to-image",
+    "dom-to-image-modern",
+    "modern",
+    "typescript",
+    "dom",
+    "image",
+    "svg",
+    "canvas"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -18,9 +34,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly -p tsconfig.build.json",
-    "build:types": "tsc --emitDeclarationOnly -p tsconfig.build.json",
     "dev": "concurrently \"vite build --watch --mode development\" \"tsc --watch --emitDeclarationOnly -p tsconfig.build.json\"",
-    "dev:types": "tsc --watch --emitDeclarationOnly -p tsconfig.build.json",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run build"
   },
